@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        #prompt로 입력하는 방식을 삭제하고
+        #주사위에 마우스를 올리거나 클릭해서 여는 것이 아니라,
+        #HTML DIV로 만든 버튼을 누르면 임의의 주사위 하나가 뒤집힌다.
+        #prompt에 입력하던 '어떤숫자', '몇 개' 총 2가지 입력 값을
+        #input창 2개를 생성해서 각각 입력 받는다.
+        #getElementByID() 사용한다. 
+    </pre>
+
+<input name= "userinput" type= "text" placeholder = "어떤 숫자" id="number" >
+<input name= "usercount" type= "text" placeholder = "몇 개" id="count" >   
+
+
+
+<!-- 강사님 설명 -->
+<img id = "i1" src="img/dice.png" alt = "이미지" >
+<img id = "i2" src="img/dice.png" alt = "이미지"  >
+<img id = "i3" src="img/dice.png" alt = "이미지"  >
+<img id = "i4" src="img/dice.png" alt = "이미지" >
+<img id = "i5" src="img/dice.png" alt = "이미지">
+
+<div onclick="changeImg()">Button</div> 
+
+<script>
+
+var a = document.getElementById('i1');
+var b = document.getElementById('i2');
+var c = document.getElementById('i3');
+var d = document.getElementById('i4');
+var e = document.getElementById('i5');
+        
+
+var objarr = [a,b,c,d,e];
+var imagearr = ["img/dice_1.png", "img/dice_2.png", "img/dice_3.png", "img/dice_4.png", "img/dice_5.png"];
+
+function shuffle(arr){
+    var resultarr = [];
+    var target = arr.length;
+    for(var x=0;x<target;x++)
+    {
+        r=Math.floor(Math.random()*arr.length)
+        resultarr.push(arr.splice(r-1,1)[0]);
+    }
+    console.log(resultarr);
+    return resultarr
+}
+var domarr = shuffle(objarr);
+
+function changeImg(){
+    domarr.pop().src= imagearr[Math.floor(Math.random()*imagearr.length)];
+  
+}
+
+
+
+
+// function userinput() 
+// {
+//   const nunber = document.getElementById('number').value;
+ 
+// }
+
+// function usercount(){
+//     const count = document.getElementById('count').value;
+// }
+
+
+
+// var found = 0;
+// function myclick() {
+//     if(obj.src.indexOf("img/dice.png")!= -1) //indexOf String 객체 문자열 검색으로 처음 누르는 이미지인지 검색
+//     {
+
+//         obj.src = imagearr[rand];
+//         selectedArr.push(rand);
+//         //console.log(selectedArr);
+//         if(selectedArr.length==5){
+//             while(true){
+//                 console.log(selectedArr);
+//                 if(selectedArr.indexOf(userinput-1)!=-1)
+//                 {
+//                     selectedArr[selectedArr.indexOf(userinput-1)]=null;
+//                     found++;
+//                     continue;
+
+//                 }
+//                 else{
+//                     console.log(found==usercount);
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+
+// }
+    </script>
+</body>
+</html>
