@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 트리</title>
+</head>
+<body>
+    <h3>DOM 객체 P의 프로퍼티, 스타일, 이벤트 리스너</h3>
+    <hr>
+    <p id = "firstP"
+    style="color:blue;
+    background:yellow"
+    onclick="this.style.color='teal'">
+    이것은 <span style="color:red">문장입니다.
+    </span>
+    </p>
+
+    <pre>        
+        #240206.html
+        #오전 문제에서 HTML 구조에 생성한 5개의 이미지 태그를
+        #obj 매개변수를 통해서만 접근할 수 있었고, function 바깥에서는
+        #obj를 사용할 수 없었음.
+
+        #Javascript 코드에서 전역적으로 특징 태그를 접근할 수 있도록
+        #하는 방법 : DOM 객체 활용
+
+        #DOM 객체
+        #Document Object Model
+        #HTML 객체 모델
+        #HTML 구조에 있는 개별 태그들을 JS에서 (script태그에서)
+        #사용할 수 있도록 함.
+
+
+        #BOM객체
+        #browser object model
+        #BOM객체에는 window 객체와 history객체 등이 있다.
+
+        #코어객체
+        #자바스크립트의 코어객체는 array string Date math 등이 있다.
+
+
+        #브라우저는 HTML 페이지가 로드되는 과정에서 각 HTML 태그를 하나의 객체로 만든다.
+        #HTML DOM은 W3C 표준으로 모든 브라우저에 호환된다.
+        #HTML에 구성된 구조를 js를 통해 동적으로 제어하려면 DOM객체화를 진행해야 함.
+
+
+        #BOM
+        #브라우저에 관한 정보를 제공하거나 브라우저의 모양을 제어하는 등 관련 객체
+        #window/screen/history 객체가 포함되어 있음.
+        
+
+
+        #DOM 객체를 통해 가능한 것
+        #1. HTML 태그의 생성 삭제 수정
+        #2. HTML에 적용된 CSS의 수정 삭제 생성
+        #3. HTML문서가 로딩된 후 HTML구조의 변경
+        #4. HTML 내부의 컨텐츠의 수정
+
+
+        #DOM트리 
+        #브라우저는 HTML 페이지를 로드하면서 HTML 태그의 포함 관계에 따라 DOM객체를
+        트리구조로 만드는데 이것을 돔트리 라고 한다.
+
+        #자바스크립트는 위 과정에서 생성된 DOM Tree구조를 통해 특정 object(element)에
+        접근하는 것임
+
+        #DOM객체의 종류는 HTML 태그의 종류만큼 있다.
+
+        #document는 DOM객체가 아니다.
+
+        #HTML 태그 당 DOM 객체가 하나씩 생성된다(브라우저에 의해)
+
+        #DOM트리는 HTML태그의 포함 관계에 따라 부모, 자식, 형제 관계로 구성된다.
+
+
+        #브라우저는 HTML 페이지를 읽으면서 동시에 태그를 출력하는 것이 아니라
+        DOM 겍체를 생성하고 DOM 트리를 구서한 후, DOM 객체를 화면에 출력하는 것임.
+
+        #HTML 페이지는 문서가 로드된 뒤 사라지고, 브라우저는 DOM객체와 DOM트리 구조만 남는다.
+
+        #따라서 JS코드로 DOM 객체를 제어하면 브라우저에서 HTML 태그의 모양이나 컨텐츠가 바뀐다.
+
+
+       
+        #DOM객체의 구성 요소
+        - DOM객체는 HTML태그의 속성이 그대로 반영되어 만을어진다,
+        - HTML 태그의 속성 : attribute
+        #html 태그의 요소
+        html 태그는 element요소들로  
+        #1.element name(=tag name)
+        2.property
+        3.style4.event listender
+        5.concat
+
+
+        위 5가지 요소는 DOM객체화 되는 과정에서 모두 포함된다.
+        HTML태그에는 속성 / 스타일 / 이벤트리스너 / 컨텐츠 / 태그네임 5요소
+
+        DOM에도 위 요소를 반영하여 동일하게 구성됨.
+
+
+        #DOM 객체의 5 구성요소
+        1. 프로퍼티 : DOM객체의 멤버변수로 HTML태그의 속성들 반영
+        2. 메서드 : DOM객체의 멤버 함수, HTML 제어에 활용
+        3. 컬렉션: 정보 집합 데이터 구조
+        4. 이벤트 리스너 : HTML 이벤트리스너와 동일
+        5. 스타일 : THML에 적용된 스타일
+
+        #DOM트리 노드간 관계
+        1.parent : 부모
+         . sibiling : 형제
+        2. previousElementSibilng 이전 형제 
+        3.  nextElementSibling 다음 형제
+         . child : 자식 
+        4. lastElementChild 마지막자식 
+        5. firstELementChild 첫 자식
+        6. children : 자식들
+
+        위 6가지 프로퍼티를 통해 DOM 트리의 루트에서 모든 노드를 탐색 가능.
+
+        #DOM객체의 주요 프로퍼티
+        1. id : id속성
+        2. style : 스타일
+        3. title : 제목
+        4. tagName : 태그명
+        5. innerHTML : 컨텐츠
+        6. childElementCount : 자식 수
+        7. firstELementChild : 첫 자식
+        8. lastElementChild : 마지막 자식
+        9. nextElementSibling : 오른쪽 옆 형제
+        10. prevoiusElementSibling : 왼쪽 옆 형제
+        11. parentElement : 부모 요소
+        12. offsetHeight : 높이(패딩, 테두리 포함)
+        13. offsetWidth : 너비(패딩, 테두리 포함)
+        14. offsetLeft : left값
+        15. offsetTop : top값
+
+
+        #컬렉션
+        1. children 컬렉션 자식 DOM객체들의 집합
+
+
+        #메서드
+        1. addEventListner() : 이벤트 리스너 속성 등록
+        2. appendChild() : 자식 추가
+        3. click() : 클릭
+        4. focus() : 포커스 지정
+        5. setAttribute() : 속성 지정
+        6. insertBefore() : 지정된 자식 앞에 새 자식 추가
+        7. querySelector() :  getElementById를 대체할 수 있는 객체화 지목 방법
+        8. removeChild() : 자식 삭제
+        9. replaceChild() : 자식 대체
+        10. removeEventListener() : 이벤트 리스너 속성 삭제
+        11. getAttribute() : 속성 조회
+
+        #prompt로 입력하는 방식을 삭제하고
+        #주사위에 마우스를 올리거나 클릭해서 여는 것이 아니라,
+        #HTML DIV로 만든 버튼을 누르면 임의의 주사위 하나가 뒤집힌다.
+        #prompt에 입력하던 '어떤숫자', '몇 개' 총 2가지 입력 값을
+        #input창 2개를 생성해서 각각 입력 받는다.
+        #getElementByID() 사용한다. 
+    </pre>
+
+<script>
+    let p = document.getElementById("firstP");
+    let text = "p.id = " + p.id + "\n";
+    text += "p.tagName = " + p.tagName + "\n";
+    text += "p.innerHTML = " + p.innerHTML + "\n";
+    text += "p.style.color = " + p.style.color + "\n";
+    text += "p.onclick = " + p.onclick + "\n";
+    text += "p.childElementCount = " + p.childElementCount + "\n";
+    text += "너비 = " + p. offsetWidth + "\n";
+    text += "높이 = " + p.offsetHeight + "\n";
+
+    alert(text);
+
+
+
+</script>
+</body>
+</html>
