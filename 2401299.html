@@ -1,0 +1,230 @@
+<! DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>
+		제목   
+		</title>
+		<meta name="author" content="301">
+		<meta name="desciption" content = "웹 페이지 HTML 기본 개념">
+		<meta name = "keywords" content = "html, css, js">
+: 
+
+	</head>
+
+
+	<body>
+		<pre id = "d1">
+설명 적는 태그
+웹 페이지를 구성하는 3요소
+1. HTML : 웹 페이지의 구조와 내용 (컨텐츠)
+2. CSS : 웹 페이지의 꾸밈 요소 (스타일 시트)
+3. JavaScript : 웹 페이지의 동적인 요소 구현
+HTML5 이전 W3C의 표준이 생기기전에
+Active X등의 비표준 기술이 많았다.
+웹 브라우저마다 다른 호환성으로 문제가 있었음.
+MS silverlight, Adobe Flash 등 전부 비표준
+HTML5 모바일, PC, 태블릿, 브라우저 관계 없이
+통일된 표준을 가진다.
+
+UTF-8 인코딩 방식의 .HTML 확장자 파일
+
+#태그 설명
+#DOCTYPE html : html 파일의 document임을 명시
+#head : 헤드 태그는 타이틀 및 메타 태그를 포함
+#title : 웹 페이지의 제목
+#body : 웹 페이지에 나타나는 본문의 영역
+#html : head와 body등 모든 태그를 감싸는 최상위 태그
+#주석 : <!-- 주석으로 작성 내용 -->
+
+#JS코드를 작성하는 태그 : script 태그 내에 작성
+#CSS 코드를 작성하는 태그 : style 태그 내에 작성
+
+#태그의 종류 : 100여개 이상이지만 대부분 30개 정도 활용
+#태그의 형태(구성)
+<img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTJfMiAg%2FMDAxNzAyMzU4NjU3MDAw.Stiac7jSAEncPH1b8GM3LujaCQYIshAQs5a_gz-iy9wg.VfXYl099EP_oM4TRplUNRk6tROSxiwsAzJ98alPyszIg.PNG.elewind%2F13.png&type=sc960_832" width = "1000" height="1000" alt ="image">
+#이미지 태그는 src 필수 속서에 이미지의 주소를 넣는다.
+#태그의 속성은 속성명 : 속성값 형태의 쌍으로 배치
+#이미지 태그는 시작태그만 존재
+#헤드 태그는 시작태그와 종료태그를 써야 함 
+#태그와 속성은 대소문자 구분 없음 src Src
+#속성 값에 불필요한 공백 문자가 들어가면 HTML5 표준에 어긋남
+
+#제목 태그
+#h1 ~ h6 까지 태그명 사용
+<h1>h1 태그 제목</h1>
+<h2>h2 태그 제목</h2>
+<h3>h3 태그 제목</h3>
+<h4>h4 태그 제목</h4>
+<h5>h5 태그 제목</h5>
+<h6>h6 태그 제목</h6>
+
+
+#단락, 문닥을 작성하는 P 태그
+HTML에서 문단은 여러 Paragraph 단락으로 나눌 수 있음
+하나의 단락을 p 태그로 표현
+<p>단락1</p><p>단락2</p>
+
+#hr 수평선 긋기
+<hr>
+#새로운 줄 바꿈 br 태그
+12345<br>56789
+
+#pre 프리포맥 태그 자유 양식
+
+
+#텍스트를 꾸미는 태그의 종류
+<b>1. b태그: 진하게</b>
+<strong id="d2">2. strong 태그: 중요</strong>
+<em>3. em태그: 강조</em>
+<i>4. i태그: 이탤릭</i>
+<small>5. small 태그: 작게</small>
+<del>6. del 태그: 삭제 표시</del>
+<ins>7. ins 태그: 추가</ins>
+<sup>8. sup 태그: 윗첨자</sup>
+<sub>9. sub 태그: 아래첨자</sub>
+<mark>10. mark 태그: 하이라이트</mark>
+
+#태그의 분류
+1. 블록 형태 태그
+-p, h, div, ul
+-블록태그는 항상 새 라인에서 시작
+-왼쪽 끝부터 오른쪽 끝까지 공간 할당
+
+2. 인라인 형태 태그
+-strong, a, img, span
+-컨텐츠 만큼만 공간을 할당
+
+#블록태그는 컨테이너 만들 때 활용한다.
+#인라인태그는 컨텐츠 일부분에 효과를 줄 때 
+
+
+
+		<!--123123-->
+		<style>
+	
+		</style>
+
+		<script>
+
+		</script>
+		<div style = "background-color:blue;padding:20px">
+		11111111111111111111111111111111111111111111
+		<span style="color:red">222222222</span>22222222222222222222
+		<span style="color:yellow">333333333</span>333333333333333333333
+		</div>
+
+		#HTML 메타 데이터
+		#메타데이터 base, link, scripht, title, meta
+		메타데이터는 head 태그 내에 위치
+		base : 기본 URL과 웹 페이지가 출력된 윈도우를 지정하기 위해 사용
+		mata : 메타 태그는 페이지의 저작자, 문자 인코딩 방식, 문서 내용 등
+		다양한 메타 데이터를 표현하기 위해 사용한다. 메타데이터는 name과 content의 속성
+		쌍으로 구성된다.
+
+
+		#이미지태그 img
+		이미지 태그를 사용하면 HTML문서에 이미지를 삽입할 수 있다.
+		src는 이미지 태그에 필수로 작성해야 하는 속성이고 그 외 속성은 생략 가능
+		src속성에 지정할 수 있는 이미지의 타입은 BMP/GIF/PNG/JPG(JPEG)
+		이미지 태그에 사용 가능한 속성:
+		1. src 이미지의 주소
+		2. alt 이미지 로딩에 실패하면 나타나게 할 텍스트
+		3. width 이미지의 너비(생략하면 원본 크기 출력)
+		4. height 이미지의 높이 (생략하면 원본 크기 출력)
+
+
+		#리스트 만들기 ul /ol /dl
+		1. ul : undorderd list : 순서 없는 리스트
+		2. ol : ordered list : 순서 있는 리스트
+		3. dl : def list : 정의 리스트
+
+		리스트 내부 각 아이템은 li 태그를 사용하고 li닫는 태그는 생략 가능
+		<ul>
+			<li>1
+			<li>2
+			<li>3
+		</ul>
+			HTML5에서 리스트나 아이템을 꾸미는 작업은 CSS3 스타일
+<ol type = "A">
+<li>1. 1번항목
+<li>2. 2번항목
+<li>3. 3번항목
+<li>4. 4번항목
+<li>5. 5번항목
+</ol>
+
+ol의 타입 속성은 마커의 종류를 설정할 수 있음
+마커의 종류 [ol에서만 적용 가능]
+1. 1 : 1, 2,3 4, 5
+2. A: A, B, C
+3. a : a, b, c
+4. I : III
+5. i : iii
+
+#중첩리스트 
+<ul id = "d3">
+	<li>1
+		<ul>
+			<li>a
+			<li>b
+			<li>c
+		</ul>
+	<li>2
+		<ol>
+			<li>가
+			<li>나
+			<li>다
+		</ol>
+	<li>3
+	<li>4
+
+</ul>
+#정의 리스트 dl
+<dl>
+<dt>용어</dt>
+<dd>설명</dd>
+</dl>
+
+#테이블 만들기 table
+<table border = "1" id= "d3">
+<caption>테이블 제목</caption>
+<thead>
+<tr><th>이름</th><th>html</th><th>CSS</th></tr>
+</thead>
+
+<tbody>
+<tr><td>301</td><td>90</td><td>80</td></tr>
+<tr><td>302</td><td>80</td><td>70</td></tr>
+</tbody>
+<tfoot>
+<tr><td>합</td><td>120</td><td>150</td></tr>
+</tfoot>
+
+
+	#하이퍼링크 a
+	웹 사이트는 여러 개의 HTML 페이지를 가지고 페이지들이 상호 연결하는 방식으로
+	전체를 구성한다. HTML 페이지에서 다른 HTML 페이지로 연결하는 고리를 하이퍼링크라고 함.
+	하이퍼링크는 텍스트나 이미지에 다른 웹 주소를 달아서 만든다.
+	하이퍼링크는 같은 사이트에 다른 HTML 페이지 뿐 아니라 다른 사이트에 있는 웹 페이지도 연결 가능하다.
+	하이퍼링크를 따라서 다른 웹 페이지로 이동하는 것을 네비게이션이라 부름 혹은 링크라고 줄여서 표현.
+
+	#하이퍼링크 a 사용방법
+	1. a 태그는 여는 태그와 닫는 태그 모두 작성
+	2. a 태그는 하이퍼링크 목적의 태그로 이동하려는 페이지의 주소를 필수 작성
+	3. href속성에 URL 입력
+
+	<a  href= "2401299.html"><img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMTBfOTUg%2FMDAxNzA0ODgwNTY4Mzgx.1QMWkKBN5ZfppjGBqfgZmEt6yjMVAtGC189BYI3vwVQg.Anqa3p0himgUCU_Jn-WzJRhFgzenqQnsuVKei_Ln_ssg.PNG.carpex11%2Fimage.png&type=sc960_832"></a>
+	<a  href= "#d1">1번구역</a>
+	<a  href= "#d2">2번구역</a>
+	<a  href= "#d3">3번구역</a>
+
+
+
+		</pre>
+	</body>
+
+</html>
+
+
