@@ -15,92 +15,121 @@
         #getElementByID() 사용한다. 
     </pre>
 
-<input name= "userinput" type= "text" placeholder = "어떤 숫자" id="number" >
-<input name= "usercount" type= "text" placeholder = "몇 개" id="count" >   
-
 
 
 <!-- 강사님 설명 -->
-<img id = "i1" src="img/dice.png" alt = "이미지" >
-<img id = "i2" src="img/dice.png" alt = "이미지"  >
-<img id = "i3" src="img/dice.png" alt = "이미지"  >
-<img id = "i4" src="img/dice.png" alt = "이미지" >
-<img id = "i5" src="img/dice.png" alt = "이미지">
+<img  class="imageBox" src="img/dice.png" alt = "이미지" >
+<img  class="imageBox" src="img/dice.png" alt = "이미지"  >
+<img  class="imageBox" src="img/dice.png" alt = "이미지"  >
+<img  class="imageBox" src="img/dice.png" alt = "이미지" >
+<img  class="imageBox" src="img/dice.png" alt = "이미지">
+<input type="text" id="input1" value="" placeholder="숫자 입력">
+<input type="text" id="input2" value="" placeholder="갯수 입력">
 
 <div onclick="changeImg()">Button</div> 
 
 <script>
 
-var a = document.getElementById('i1');
-var b = document.getElementById('i2');
-var c = document.getElementById('i3');
-var d = document.getElementById('i4');
-var e = document.getElementById('i5');
-        
+// var a = document.getElementById('i1');
+// var b = document.getElementById('i2');
+// var c = document.getElementById('i3');
+// var d = document.getElementById('i4');
+// var e = document.getElementById('i5');
 
-var objarr = [a,b,c,d,e];
-var imagearr = ["img/dice_1.png", "img/dice_2.png", "img/dice_3.png", "img/dice_4.png", "img/dice_5.png"];
+var objcol = document.getElementsByClassName('imageBox');
+var objarr = Array.from(objcol);  //collection -> array로 변환
+var imagearr = ["img/dice_1.png", "img/dice_2.png", "img/dice_3.png", "img/dice_4.png", "img/dice_5.png", "img/dice_6.png"];
+var input1 = document.getElementById("input1");
+var input2 = document.getElementById("input2");
+var count = 0;
 
 function shuffle(arr){
     var resultarr = [];
     var target = arr.length;
     for(var x=0;x<target;x++)
     {
-        r=Math.floor(Math.random()*arr.length)
+        r=Math.floor(Math.random()*arr.length);
         resultarr.push(arr.splice(r-1,1)[0]);
     }
-    console.log(resultarr);
     return resultarr
+    
+    console.log(resultarr);
 }
 var domarr = shuffle(objarr);
-
+        
 function changeImg(){
+    var objcol2 = document.getElementsByClassName('imageBox');
+    if(domarr.length>=1)
+    {
     domarr.pop().src= imagearr[Math.floor(Math.random()*imagearr.length)];
-  
+    }
+    
+    else
+    {
+ 
+        for(var i=0; i<objcol.length; i++){
+            if(objcol[i].src.indexOf('img/dice_'+input1.value)!=-1)
+            {
+                count++;
+
+            }
+        }
+            document.close();  //새로 만들어지는 문서 초기화 
+            document.write("<div onclick='changeImg()'>Button</div> ");  //문서가 살아있음  -> 버튼을 만들기
+            var range1= Math.floor(Math.random()*10)+1 //박스 수 1~20 개 사이로 랜덤
+            
+            
+            for (var j=0; j<range1;j++)
+            {
+            document.write("<img class = 'imageBox' src='img/dice.png' alt = '이미지'>"); //이미지 5개 생성
+            }
+            var objcol3 = document.getElementsByClassName('imageBox');
+            console.log(objcol3);
+            console.log(document.body.children); //body 접근해서 바디의 자식들 컬렉션
+            console.log(document.body.children[3],"ddddddd");  //컬렉션 인덱스 사용 가능
+            console.log(document.body.children.length);  //컬렉션 길이 조회
+            var sum = 0;
+            for(var m=0; m<document.body.children.length;m++){  //자식 요소만큼 반복
+                console.log(document.body.children[m].tagName)  //자식들의 태그 네임 전부 출력
+                if(document.body.children[m].tagName=='IMG')  //이미지 태그 인 것만 검출
+                {
+                    console.log("이미지 태그 발견");
+                    var x = document.body.children[m];  //img태그를 x로 객체화
+                    console.log(x);//x를 출력
+                    var rr = (Math.floor(Math.random()*6)+1);  //랜덤 1~6범위 생성
+                    x.src = "img/dice_"+rr+".png";  //x 라는 이미지 객체에 1~6 사이의 랜덤 주사위 이미지
+                    sum +=Number(x.src[31]);
+                // console.log(typeof x.src[31]);
+                // console.log(typeof Number(x.src[31]), "222222");
+                console.log(sum);
+                }
+                var avg = sum/range1;
+                console.log(avg);
+            console.log("평균은" + avg + "입니다.");
+            }
+            // var sum = 0;
+
+            // for (var p= 0; p<range1; p++){
+            //     sum +=Number(x.src[31]);
+            //     // console.log(typeof x.src[31]);
+            //     // console.log(typeof Number(x.src[31]), "222222");
+            //     console.log(x.src[31]);
+            // }
+            // var avg = sum/range1;
+
+            // console.log(avg);
+            // console.log("평균은" + avg + "입니다.");
+            if(count==input2.value){
+                console.log("일치");
+            }
+            else
+            {
+                console.log("불일치");
+            }
+            
+    }
 }
 
-
-
-
-// function userinput() 
-// {
-//   const nunber = document.getElementById('number').value;
- 
-// }
-
-// function usercount(){
-//     const count = document.getElementById('count').value;
-// }
-
-
-
-// var found = 0;
-// function myclick() {
-//     if(obj.src.indexOf("img/dice.png")!= -1) //indexOf String 객체 문자열 검색으로 처음 누르는 이미지인지 검색
-//     {
-
-//         obj.src = imagearr[rand];
-//         selectedArr.push(rand);
-//         //console.log(selectedArr);
-//         if(selectedArr.length==5){
-//             while(true){
-//                 console.log(selectedArr);
-//                 if(selectedArr.indexOf(userinput-1)!=-1)
-//                 {
-//                     selectedArr[selectedArr.indexOf(userinput-1)]=null;
-//                     found++;
-//                     continue;
-
-//                 }
-//                 else{
-//                     console.log(found==usercount);
-//                     break;
-//                 }
-//             }
-//         }
-//     }
-
-// }
     </script>
 </body>
 </html>
