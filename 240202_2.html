@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbutton">dropdown</button>
+        <div class="dropdown-content">
+            <a href="">menu1</a>
+            <a href="">menu2</a>
+            <a href="">menu3</a>
+
+        </div>
+
+
+
+    </div>
+    <style>
+        .dropdown{
+            position: relative;
+            display: inline-block;
+            background-color: rgb(146, 127, 255);
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: beige;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(143, 98, 216, 0.2); /*투명도를 주면 공중에 떠있는 것 처럼 보임*/
+            z-index: 1;
+        }
+
+        .dropdown-content a:hover{background-color: rgb(231, 189, 164);}
+        .dropdown:hover .dropdown-content{display: block;}  /*dropdown 안에 dropdown-content가 자식*/
+        
+    
+    </style>
+    
+</body>
+</html>
