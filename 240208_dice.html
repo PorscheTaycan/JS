@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeydown="mykeydown(event)" placeholder="입력">
+    
+    <div style="display:flex; justify-content: space-between; align-items :center;">
+        <div  onclick="minus()" style="width: 20%; text-align: center;">-</div>
+    <img  id="imgTag" src="img/dice_3.PNG" alt="">
+        <div onclick="plus()" style="width: 20%; text-align: center;">+</div>
+    <style>
+               div
+        {
+            display: inline-block;border:3px solid red;
+        }
+    </style>
+    <script>
+    var imagearr = [];
+
+    
+    function plus()
+    {
+        //document.getElementById('imgTag').src=imagearr[i];
+        //document.getElementById('imgTag').src=imagearr[i];
+        //console.log(document.getElementById('imgTag').src);
+        if(imagearr.indexOf(document.getElementById('imgTag').src)){
+            console.log(imagearr.indexOf(document.getElementById('imgTag').src))
+            
+        }
+        else if(imagearr.indexOf(document.getElementById('imgTag').src)){
+            //console.log("없다.")
+        }
+    
+    }
+    function minus()
+    {
+        // number = parseInt(number) - 1;
+        // console.log(number)
+
+        // if(1<=number&&number <=6){  
+        //     document.getElementById('imgTag').src=imagearr[number-1];
+        // }
+        // if(number==0){
+        //     document.getElementById('imgTag').src=imagearr[5];
+        //     number = 6;
+        // }
+
+        if(imagearr.indexOf(document.getElementById('imgTag').src)){
+            console.log(imagearr.indexOf(document.getElementById('imgTag').src))
+            
+        }
+        else if(imagearr.indexOf(document.getElementById('imgTag').src)){
+            //console.log("없다.")
+        }
+    
+    }
+
+    function mykeydown(e){
+            var kcode = e.keyCode;
+            if(e.keyCode == 13){
+                imagearr.push(e.target.value);
+                console.log(imagearr);
+            }
+        
+            
+
+        }
+    </script>
+    
+</body>
+</html>
