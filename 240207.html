@@ -48,45 +48,143 @@
 
 
     </pre>
-    <div style="display:flex; justify-self: space-between;">
-        <div  onclick="plus()" style="width: 20%;">+</div>
+    <!-- <div style="display:flex; justify-content: space-between; align-items :center;">
+        <div  onclick="plus()" style="width: 20%; text-align: center;">+</div>
     <img  id="imgTag" src="img/dice_3.PNG" alt="">
-        <div onclick="minus()" style="width: 20%;">-</div>
+        <div onclick="minus()" style="width: 20%; text-align: center;">-</div> -->
+
+
+    <div style="display:flex; justify-content: space-between; align-items :center;">
+    <div style="width: 20%; text-align: center; " onclick="right()">+</div>
+    <img  id="imgTag" src="img/dice_3.PNG" alt="">
+    <div style="width: 20%; text-align: center; " onclick="left()">-</div>
     
 
     </div>
     <br><br>
 
     <style>
-        div{display: inline-block;border:3px solid red;}
+        
+        div
+        {
+            display: inline-block;border:3px solid red;
+        }
     </style>
     <script>
-        var number= 3
-        function plus(){
+        // var number= 3;
+        // function plus(){
             
-            number = parseInt(number) + 1;
-            console.log(document.getElementById('imgTag').src)    
-            if(1<=number&&number <=6){        
-                document.getElementById('imgTag').src='img/dice_'+number+'.png';
-            }
-            if(number==7){
-                document.getElementById('imgTag').src='img/dice_1.png';
-                number = 1;
-            }
+        //     number = parseInt(number) + 1;
+        //     console.log(document.getElementById('imgTag').src)    
+        //     if(1<=number&&number <=6){        
+        //         document.getElementById('imgTag').src='img/dice_'+number+'.png';
+        //     }
+        //     if(number==7){
+        //         document.getElementById('imgTag').src='img/dice_1.png';
+        //         number = 1;
+        //     }
             
 
+        // }
+        // function minus(){
+        //     number = parseInt(number) - 1;
+        //     console.log(number)
+        //     if(1<=number&&number <=6){  
+        //         document.getElementById('imgTag').src='img/dice_'+number+'.png';
+        //     }
+        //     if(number==0){
+        //         document.getElementById('imgTag').src='img/dice_6.png';
+        //         number = 6;
+        //     }
+        // }
+
+        //강사님 설명
+        
+        // var pivot = 3;
+        // function left(){
+        //     if(pivot>1){
+        //         pivot--;
+                
+        //     }
+        //     else{
+        //         pivot = 6;
+                
+        //     }
+        //     console.log(imagearr[0].src)
+        //     document.images[0].src = "img/dice_" + pivot + ".png"
+            
+        // }
+        // function right(){
+        //     if(pivot<6){
+        //         pivot++;
+                
+        //     }
+        //     else{
+        //         pivot = 1;
+                
+        //     }
+        //     document.images[0].src = "img/dice_" + pivot + ".png"
+            
+        // }
+
+        //내가 푼 것 
+        // var imagearr = ["img/dice_1.png", "img/dice_2.png", "img/dice_3.png", "img/dice_4.png", "img/dice_5.png", "img/dice_6.png"];
+    
+        // var number= 3;
+        // function plus(){
+            
+        //     number = parseInt(number) + 1;
+        //     console.log(number)    
+
+        //     if(1<=number&&number <=6){        
+        //         document.getElementById('imgTag').src=imagearr[number-1];
+        //     }
+        //     if(number==7){
+        //         document.getElementById('imgTag').src=imagearr[0];
+        //         number = 1;
+        //     }
+            
+
+        // }
+        // function minus(){
+        //     number = parseInt(number) - 1;
+        //     console.log(number)
+        //     if(1<=number&&number <=6){  
+        //         document.getElementById('imgTag').src=imagearr[number-1];
+        //     }
+        //     if(number==0){
+        //         document.getElementById('imgTag').src=imagearr[5];
+        //         number = 6;
+        //     }
+        // }
+
+        var pivot = 3;
+        var imagearr = ["img/dice_1.png", "img/dice_2.png", "img/dice_3.png", "img/dice_4.png", "img/dice_5.png", "img/dice_6.png"];
+        var p = " ";
+        var e = ".png";
+
+        for(var m =0; m<imagearr.length; m++){
+            imgarr[m] = imagearr[m] + e;
+
         }
-        function minus(){
-            number = parseInt(number) - 1;
-            console.log(number)
-            if(1<=number&&number <=6){  
-                document.getElementById('imgTag').src='img/dice_'+number+'.png';
+        function left()
+        {
+
+            pivot--;
+            if(pivot == -1){
+                pivot=imagearr.length-1;
             }
-            if(number==0){
-                document.getElementById('imgTag').src='img/dice_6.png';
-                number = 6;
-            }
+            document.images[0].src = imagearr[pivot];
         }
+        function right(){
+            pivot++;
+            if(pivot == imagearr.length){
+                pivot=0;
+            }
+            document.images[0].src = imagearr[pivot];
+
+        }
+        
         function xxxx(){
 
         
